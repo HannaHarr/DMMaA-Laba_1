@@ -38,5 +38,10 @@ namespace Pattern_recognition_GUI
         {
             // поменять картинку на панели
         }
+
+        private void AlogorithmComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // поменять входные параметры
+        }
     }
 }

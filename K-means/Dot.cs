@@ -8,7 +8,7 @@ namespace K_means
 {
     public class Dot
     {
-        public int diameter = 2;
+        public int D = 2;
 
         public int X;
 

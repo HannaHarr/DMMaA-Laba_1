@@ -58,6 +58,7 @@
             this.AlogorithmComboBox.Name = "AlogorithmComboBox";
             this.AlogorithmComboBox.Size = new System.Drawing.Size(125, 23);
             this.AlogorithmComboBox.TabIndex = 1;
+            this.AlogorithmComboBox.SelectedIndexChanged += new System.EventHandler(this.AlogorithmComboBox_SelectedIndexChanged);
             // 
             // alogorithmLabel
             // 
