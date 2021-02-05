@@ -9,7 +9,7 @@ namespace K_means
 {
     // получает коллекцию точек и коллекцию центральных точек
     // выдает список точек разбитых на области на разных итерациях
-    public abstract class Algorithm
+    public class Logic
     {
         private Random random = new Random();
 
@@ -18,9 +18,18 @@ namespace K_means
         private Color coreColor = Color.Red;
 
         private Color[] colors = { Color.Blue,           Color.Green,          Color.Orange,        Color.Magenta,  Color.Black,
-                                   Color.Cyan,           Color.ForestGreen,    Color.Sienna,        Color.Purple,   Color.Brown,
+                                   Color.Cyan,           Color.DarkGreen,      Color.Sienna,        Color.Purple,   Color.Brown,
                                    Color.CornflowerBlue, Color.DarkOliveGreen, Color.DarkGoldenrod, Color.Maroon,   Color.MidnightBlue,
-                                   Color.SlateBlue,      Color.LightSeaGreen,  Color.IndianRed,     Color.DeepPink, Color.DarkSlateGray };
+                                   Color.SlateBlue,      Color.LightSeaGreen,  Color.IndianRed,     Color.HotPink,  Color.DarkSlateGray };
+
+        private int width;
+
+        private int hight;
+        public Logic(int w, int h)
+        {
+            width = w;
+            hight = h;
+        }
 
         public IEnumerable<List<Region>> Process(int countCore, int countDote)
         {
@@ -31,8 +40,7 @@ namespace K_means
             yield return regions;
 
             regions.Clear();
-            List<Dot> cores = InitializeCores(countCore, dots);
-            dots.RemoveAll(item => cores.Contains(item));
+            List<Dot> cores = GenerateDots(countCore);
 
             bool IsContinue;
 
@@ -40,7 +48,6 @@ namespace K_means
                 regions = BreakIntoAreas(dots, cores);
                 yield return regions;
 
-                dots.AddRange(cores);
                 cores.Clear();
                 IsContinue = false;
                 
@@ -50,22 +57,9 @@ namespace K_means
                     cores.Add(region.core);
                 }
 
-                dots.RemoveAll(item => cores.Contains(item));
             } while (IsContinue);
 
             yield break;
-        }
-
-        private List<Dot> InitializeCores(int countCore, List<Dot> dots)
-        {
-            List<Dot> cores = new List<Dot>();
-
-            for (int i = 0; i < countCore; i++)
-            {
-                cores.Add(dots[i]);
-            }
-
-            return cores;
         }
 
         // Разбить на области вокруг центров
@@ -117,7 +111,7 @@ namespace K_means
 
             region.core = new Dot(X / region.dots.Count, Y / region.dots.Count);
 
-            return !lastCore.Equals(region.core);
+            return !Equals(lastCore, region.core);
         }
 
         // Случайно сгенерировать точки
@@ -127,7 +121,7 @@ namespace K_means
 
             for (int i = 0; i < countDot; i++)
             {
-                dots.Add(new Dot(random.Next(1, 670), random.Next(1, 450)));
+                dots.Add(new Dot(random.Next(1, width), random.Next(1, hight)));
             }
 
             return dots;
@@ -138,13 +132,13 @@ namespace K_means
         {
             foreach (Region region in regions)
             {
-                if (region.core != null)
-                    graph.FillEllipse(new SolidBrush(coreColor), region.core.X, region.core.Y, region.core.D, region.core.D);
-
                 foreach (Dot dot in region.dots)
                 {
                     graph.FillEllipse(new SolidBrush(region.color), dot.X, dot.Y, dot.D, dot.D);
                 }
+
+                if (region.core != null)
+                    graph.FillEllipse(new SolidBrush(coreColor), region.core.X, region.core.Y, region.core.D + 1, region.core.D + 1);
             }
         }
     }

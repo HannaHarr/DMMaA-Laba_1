@@ -28,24 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mainPanel = new System.Windows.Forms.Panel();
             this.AlogorithmComboBox = new System.Windows.Forms.ComboBox();
             this.alogorithmLabel = new System.Windows.Forms.Label();
-            this.PointCountLabel = new System.Windows.Forms.Label();
-            this.PointCountTextBox = new System.Windows.Forms.TextBox();
+            this.DotCountLabel = new System.Windows.Forms.Label();
+            this.DotCountTextBox = new System.Windows.Forms.TextBox();
             this.CoreCountLabel = new System.Windows.Forms.Label();
             this.CoreCountTextBox = new System.Windows.Forms.TextBox();
             this.CalculateButton = new System.Windows.Forms.Button();
             this.StepListBox = new System.Windows.Forms.ListBox();
+            this.MainPictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.MainPictureBox)).BeginInit();
             this.SuspendLayout();
-            // 
-            // mainPanel
-            // 
-            this.mainPanel.BackColor = System.Drawing.Color.Linen;
-            this.mainPanel.Location = new System.Drawing.Point(130, 0);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(670, 450);
-            this.mainPanel.TabIndex = 0;
             // 
             // AlogorithmComboBox
             // 
@@ -54,7 +47,7 @@
             this.AlogorithmComboBox.DropDownWidth = 124;
             this.AlogorithmComboBox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AlogorithmComboBox.FormattingEnabled = true;
-            this.AlogorithmComboBox.Location = new System.Drawing.Point(3, 275);
+            this.AlogorithmComboBox.Location = new System.Drawing.Point(4, 382);
             this.AlogorithmComboBox.Name = "AlogorithmComboBox";
             this.AlogorithmComboBox.Size = new System.Drawing.Size(125, 23);
             this.AlogorithmComboBox.TabIndex = 1;
@@ -65,37 +58,37 @@
             this.alogorithmLabel.AllowDrop = true;
             this.alogorithmLabel.AutoSize = true;
             this.alogorithmLabel.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.alogorithmLabel.Location = new System.Drawing.Point(9, 257);
+            this.alogorithmLabel.Location = new System.Drawing.Point(10, 364);
             this.alogorithmLabel.Name = "alogorithmLabel";
             this.alogorithmLabel.Size = new System.Drawing.Size(61, 15);
             this.alogorithmLabel.TabIndex = 2;
             this.alogorithmLabel.Text = "Алгоритм";
             // 
-            // PointCountLabel
+            // DotCountLabel
             // 
-            this.PointCountLabel.AutoSize = true;
-            this.PointCountLabel.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PointCountLabel.Location = new System.Drawing.Point(9, 310);
-            this.PointCountLabel.Name = "PointCountLabel";
-            this.PointCountLabel.Size = new System.Drawing.Size(104, 15);
-            this.PointCountLabel.TabIndex = 3;
-            this.PointCountLabel.Text = "Количество точек";
+            this.DotCountLabel.AutoSize = true;
+            this.DotCountLabel.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DotCountLabel.Location = new System.Drawing.Point(10, 417);
+            this.DotCountLabel.Name = "DotCountLabel";
+            this.DotCountLabel.Size = new System.Drawing.Size(104, 15);
+            this.DotCountLabel.TabIndex = 3;
+            this.DotCountLabel.Text = "Количество точек";
             // 
-            // PointCountTextBox
+            // DotCountTextBox
             // 
-            this.PointCountTextBox.BackColor = System.Drawing.Color.Linen;
-            this.PointCountTextBox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PointCountTextBox.Location = new System.Drawing.Point(3, 328);
-            this.PointCountTextBox.Name = "PointCountTextBox";
-            this.PointCountTextBox.Size = new System.Drawing.Size(125, 23);
-            this.PointCountTextBox.TabIndex = 4;
-            this.PointCountTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxKeyPress);
+            this.DotCountTextBox.BackColor = System.Drawing.Color.Linen;
+            this.DotCountTextBox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DotCountTextBox.Location = new System.Drawing.Point(4, 435);
+            this.DotCountTextBox.Name = "DotCountTextBox";
+            this.DotCountTextBox.Size = new System.Drawing.Size(125, 23);
+            this.DotCountTextBox.TabIndex = 4;
+            this.DotCountTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxKeyPress);
             // 
             // CoreCountLabel
             // 
             this.CoreCountLabel.AutoSize = true;
             this.CoreCountLabel.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CoreCountLabel.Location = new System.Drawing.Point(9, 359);
+            this.CoreCountLabel.Location = new System.Drawing.Point(10, 466);
             this.CoreCountLabel.Name = "CoreCountLabel";
             this.CoreCountLabel.Size = new System.Drawing.Size(119, 15);
             this.CoreCountLabel.TabIndex = 5;
@@ -105,7 +98,7 @@
             // 
             this.CoreCountTextBox.BackColor = System.Drawing.Color.Linen;
             this.CoreCountTextBox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CoreCountTextBox.Location = new System.Drawing.Point(3, 377);
+            this.CoreCountTextBox.Location = new System.Drawing.Point(4, 484);
             this.CoreCountTextBox.Name = "CoreCountTextBox";
             this.CoreCountTextBox.Size = new System.Drawing.Size(125, 23);
             this.CoreCountTextBox.TabIndex = 6;
@@ -116,7 +109,7 @@
             this.CalculateButton.BackColor = System.Drawing.Color.Linen;
             this.CalculateButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.CalculateButton.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CalculateButton.Location = new System.Drawing.Point(3, 415);
+            this.CalculateButton.Location = new System.Drawing.Point(4, 522);
             this.CalculateButton.Name = "CalculateButton";
             this.CalculateButton.Size = new System.Drawing.Size(124, 23);
             this.CalculateButton.TabIndex = 7;
@@ -132,44 +125,53 @@
             this.StepListBox.ItemHeight = 15;
             this.StepListBox.Location = new System.Drawing.Point(4, 8);
             this.StepListBox.Name = "StepListBox";
-            this.StepListBox.Size = new System.Drawing.Size(122, 244);
+            this.StepListBox.Size = new System.Drawing.Size(122, 334);
             this.StepListBox.TabIndex = 8;
             this.StepListBox.SelectedIndexChanged += new System.EventHandler(this.StepListBox_SelectedIndexChanged);
+            // 
+            // MainPictureBox
+            // 
+            this.MainPictureBox.BackColor = System.Drawing.Color.Linen;
+            this.MainPictureBox.Location = new System.Drawing.Point(132, 8);
+            this.MainPictureBox.Name = "MainPictureBox";
+            this.MainPictureBox.Size = new System.Drawing.Size(853, 617);
+            this.MainPictureBox.TabIndex = 9;
+            this.MainPictureBox.TabStop = false;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SandyBrown;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(997, 637);
+            this.Controls.Add(this.MainPictureBox);
             this.Controls.Add(this.StepListBox);
             this.Controls.Add(this.alogorithmLabel);
             this.Controls.Add(this.CalculateButton);
             this.Controls.Add(this.CoreCountTextBox);
             this.Controls.Add(this.CoreCountLabel);
-            this.Controls.Add(this.PointCountTextBox);
-            this.Controls.Add(this.PointCountLabel);
+            this.Controls.Add(this.DotCountTextBox);
+            this.Controls.Add(this.DotCountLabel);
             this.Controls.Add(this.AlogorithmComboBox);
-            this.Controls.Add(this.mainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
             this.Text = "Распознование образов";
+            ((System.ComponentModel.ISupportInitialize)(this.MainPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.ComboBox AlogorithmComboBox;
         private System.Windows.Forms.Label alogorithmLabel;
-        private System.Windows.Forms.Label PointCountLabel;
-        private System.Windows.Forms.TextBox PointCountTextBox;
+        private System.Windows.Forms.Label DotCountLabel;
+        private System.Windows.Forms.TextBox DotCountTextBox;
         private System.Windows.Forms.Label CoreCountLabel;
         private System.Windows.Forms.TextBox CoreCountTextBox;
         private System.Windows.Forms.Button CalculateButton;
         private System.Windows.Forms.ListBox StepListBox;
+        private System.Windows.Forms.PictureBox MainPictureBox;
     }
 }
 

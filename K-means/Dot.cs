@@ -8,7 +8,7 @@ namespace K_means
 {
     public class Dot
     {
-        public int D = 2;
+        public int D = 4;
 
         public int X;
 
@@ -18,6 +18,14 @@ namespace K_means
         {
             X = x;
             Y = y;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj.GetType() != GetType()) return false;
+
+            Dot dot = (Dot)obj;
+            return (X == dot.X && Y == dot.Y);
         }
     }
 }
