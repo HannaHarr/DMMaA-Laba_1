@@ -22,10 +22,50 @@ namespace K_means
                                    Color.CornflowerBlue, Color.DarkOliveGreen, Color.DarkGoldenrod, Color.Maroon,   Color.MidnightBlue,
                                    Color.SlateBlue,      Color.LightSeaGreen,  Color.IndianRed,     Color.DeepPink, Color.DarkSlateGray };
 
-        // Итеративная функция
-        public List<Region> Step(List<Dot> dots, List<Dot> cores)
+        public IEnumerable<List<Region>> Process(int countCore, int countDote)
         {
-            
+            List<Region> regions = new List<Region>();
+
+            List<Dot> dots = GenerateDots(countDote);
+            regions.Add(new Region(beginColor, null, dots));
+            yield return regions;
+
+            regions.Clear();
+            List<Dot> cores = InitializeCores(countCore, dots);
+            dots.RemoveAll(item => cores.Contains(item));
+
+            bool IsContinue;
+
+            do {
+                regions = BreakIntoAreas(dots, cores);
+                yield return regions;
+
+                dots.AddRange(cores);
+                cores.Clear();
+                IsContinue = false;
+                
+                foreach (Region region in regions)
+                {
+                    IsContinue |= FindNewCore(region);
+                    cores.Add(region.core);
+                }
+
+                dots.RemoveAll(item => cores.Contains(item));
+            } while (IsContinue);
+
+            yield break;
+        }
+
+        private List<Dot> InitializeCores(int countCore, List<Dot> dots)
+        {
+            List<Dot> cores = new List<Dot>();
+
+            for (int i = 0; i < countCore; i++)
+            {
+                cores.Add(dots[i]);
+            }
+
+            return cores;
         }
 
         // Разбить на области вокруг центров
@@ -42,14 +82,14 @@ namespace K_means
             foreach (Dot dote in dots)
             {
                 Region region = null;
-                double Distance = double.PositiveInfinity;
+                double distance = double.PositiveInfinity;
 
                 foreach (Region reg in regions)
                 {
-                    double dist = Math.Sqrt(Math.Pow(reg.center.X - dote.X, 2) + Math.Pow(reg.center.Y - dote.Y, 2));
-                    if (dist < Distance) 
+                    double dist = Math.Sqrt(Math.Pow(reg.core.X - dote.X, 2) + Math.Pow(reg.core.Y - dote.Y, 2));
+                    if (dist < distance) 
                     {
-                        Distance = dist;
+                        distance = dist;
                         region = reg;
                     }
                 }
@@ -61,13 +101,27 @@ namespace K_means
         }
 
         // Найти новое ядро
-        private Dot FindNewCore(Region region)
+        private bool FindNewCore(Region region)
         {
-            
+            int X = 0;
+            int Y = 0;
+
+            Dot lastCore = region.core;
+            region.dots.Add(region.core);
+
+            foreach (Dot dote in region.dots)
+            {
+                X += dote.X;
+                Y += dote.Y;
+            }
+
+            region.core = new Dot(X / region.dots.Count, Y / region.dots.Count);
+
+            return !lastCore.Equals(region.core);
         }
 
         // Случайно сгенерировать точки
-        public Region GenerateDots(int countDot)
+        private List<Dot> GenerateDots(int countDot)
         {
             List<Dot> dots = new List<Dot>();
 
@@ -76,18 +130,21 @@ namespace K_means
                 dots.Add(new Dot(random.Next(1, 670), random.Next(1, 450)));
             }
 
-            return new Region(beginColor, null, dots);
+            return dots;
         }
 
-        // Нарисовать регион
-        public void DrawRegion(Graphics graph, Region region)
+        // Нарисовать регионы
+        public void DrawRegions(Graphics graph, List<Region> regions)
         {
-            if (region.center != null)
-                graph.FillEllipse(new SolidBrush(coreColor), region.center.X, region.center.Y, region.center.D, region.center.D);
-
-            foreach (Dot dot in region.dots)
+            foreach (Region region in regions)
             {
-                graph.FillEllipse(new SolidBrush(region.color), dot.X, dot.Y, dot.D, dot.D);
+                if (region.core != null)
+                    graph.FillEllipse(new SolidBrush(coreColor), region.core.X, region.core.Y, region.core.D, region.core.D);
+
+                foreach (Dot dot in region.dots)
+                {
+                    graph.FillEllipse(new SolidBrush(region.color), dot.X, dot.Y, dot.D, dot.D);
+                }
             }
         }
     }

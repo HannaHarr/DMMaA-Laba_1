@@ -16,7 +16,7 @@ namespace Pattern_recognition_GUI
         {
             InitializeComponent();
 
-            // добавить в comboBox алгоритмы
+            AlogorithmComboBox.Items.Add("К-средних");
         }
 
         private void CalculateButton_Click(object sender, EventArgs e)

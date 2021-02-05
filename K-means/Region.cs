@@ -11,7 +11,7 @@ namespace K_means
     {
         public List<Dot> dots;
 
-        public Dot center;
+        public Dot core;
 
         public Color color;
 
@@ -19,7 +19,7 @@ namespace K_means
         {
             this.color = color;
             this.dots = dots;
-            center = dot;
+            core = dot;
         }
     }
 }
