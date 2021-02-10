@@ -47,11 +47,14 @@ namespace Pattern_recognition_GUI
 
                 int i = 0;
                 string str = "Шаг №";
+                Bitmap bmp;
+
                 foreach (List<K_means.Region> regions in logic.Process(countCore, countDot))
                 {
-                    Bitmap bmp = new Bitmap(MainPictureBox.Width, MainPictureBox.Height);
+                    bmp = new Bitmap(MainPictureBox.Width, MainPictureBox.Height);
 
                     logic.DrawRegions(Graphics.FromImage(bmp), regions);
+                    MainPictureBox.Image = bmp;
                     steps.Add(bmp);
                     StepListBox.Items.Add(str + i);
                     StepListBox.SelectedIndex = i++;

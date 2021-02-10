@@ -138,8 +138,10 @@ namespace K_means
                 }
 
                 if (region.core != null)
-                    graph.FillEllipse(new SolidBrush(coreColor), region.core.X, region.core.Y, region.core.D + 1, region.core.D + 1);
+                    graph.FillEllipse(new SolidBrush(coreColor), region.core.X, region.core.Y, region.core.D + 3, region.core.D + 3);
             }
+
+            graph.Dispose();
         }
     }
 }
