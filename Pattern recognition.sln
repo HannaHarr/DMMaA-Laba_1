@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pattern recognition GUI", "Pattern recognition GUI\Pattern recognition GUI.csproj", "{07CE565C-BB58-4449-B30D-82D1E764ACE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "K-means", "K-means\K-means.csproj", "{4CBB3AAF-4922-454E-B5AF-CC3460015A47}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic", "K-means\Logic.csproj", "{4CBB3AAF-4922-454E-B5AF-CC3460015A47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

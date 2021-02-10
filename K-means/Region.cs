@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
-namespace K_means
+namespace Logic
 {
     public class Region
     {

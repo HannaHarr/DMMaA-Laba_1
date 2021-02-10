@@ -42,8 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Logic.cs" />
+    <Compile Include="Algorithm.cs" />
+    <Compile Include="K-means.cs" />
     <Compile Include="Dot.cs" />
+    <Compile Include="Maxmin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Region.cs" />
   </ItemGroup>

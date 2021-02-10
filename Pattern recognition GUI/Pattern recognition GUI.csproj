@@ -80,9 +80,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\K-means\K-means.csproj">
+    <ProjectReference Include="..\K-means\Logic.csproj">
       <Project>{4cbb3aaf-4922-454e-b5af-cc3460015a47}</Project>
-      <Name>K-means</Name>
+      <Name>Logic</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

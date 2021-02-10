@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.AlogorithmComboBox = new System.Windows.Forms.ComboBox();
+            this.AlgorithmComboBox = new System.Windows.Forms.ComboBox();
             this.alogorithmLabel = new System.Windows.Forms.Label();
             this.DotCountLabel = new System.Windows.Forms.Label();
             this.DotCountTextBox = new System.Windows.Forms.TextBox();
@@ -40,18 +40,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.MainPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // AlogorithmComboBox
+            // AlgorithmComboBox
             // 
-            this.AlogorithmComboBox.BackColor = System.Drawing.Color.Linen;
-            this.AlogorithmComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.AlogorithmComboBox.DropDownWidth = 124;
-            this.AlogorithmComboBox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AlogorithmComboBox.FormattingEnabled = true;
-            this.AlogorithmComboBox.Location = new System.Drawing.Point(4, 382);
-            this.AlogorithmComboBox.Name = "AlogorithmComboBox";
-            this.AlogorithmComboBox.Size = new System.Drawing.Size(125, 23);
-            this.AlogorithmComboBox.TabIndex = 1;
-            this.AlogorithmComboBox.SelectedIndexChanged += new System.EventHandler(this.AlogorithmComboBox_SelectedIndexChanged);
+            this.AlgorithmComboBox.BackColor = System.Drawing.Color.Linen;
+            this.AlgorithmComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.AlgorithmComboBox.DropDownWidth = 124;
+            this.AlgorithmComboBox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AlgorithmComboBox.FormattingEnabled = true;
+            this.AlgorithmComboBox.Location = new System.Drawing.Point(4, 382);
+            this.AlgorithmComboBox.Name = "AlgorithmComboBox";
+            this.AlgorithmComboBox.Size = new System.Drawing.Size(142, 23);
+            this.AlgorithmComboBox.TabIndex = 1;
+            this.AlgorithmComboBox.SelectedIndexChanged += new System.EventHandler(this.AlogorithmComboBox_SelectedIndexChanged);
             // 
             // alogorithmLabel
             // 
@@ -80,7 +80,7 @@
             this.DotCountTextBox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.DotCountTextBox.Location = new System.Drawing.Point(4, 435);
             this.DotCountTextBox.Name = "DotCountTextBox";
-            this.DotCountTextBox.Size = new System.Drawing.Size(125, 23);
+            this.DotCountTextBox.Size = new System.Drawing.Size(142, 23);
             this.DotCountTextBox.TabIndex = 4;
             this.DotCountTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxKeyPress);
             // 
@@ -100,7 +100,7 @@
             this.CoreCountTextBox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CoreCountTextBox.Location = new System.Drawing.Point(4, 484);
             this.CoreCountTextBox.Name = "CoreCountTextBox";
-            this.CoreCountTextBox.Size = new System.Drawing.Size(125, 23);
+            this.CoreCountTextBox.Size = new System.Drawing.Size(142, 23);
             this.CoreCountTextBox.TabIndex = 6;
             this.CoreCountTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxKeyPress);
             // 
@@ -111,7 +111,7 @@
             this.CalculateButton.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CalculateButton.Location = new System.Drawing.Point(4, 522);
             this.CalculateButton.Name = "CalculateButton";
-            this.CalculateButton.Size = new System.Drawing.Size(124, 23);
+            this.CalculateButton.Size = new System.Drawing.Size(142, 23);
             this.CalculateButton.TabIndex = 7;
             this.CalculateButton.Text = "Вычислить";
             this.CalculateButton.UseVisualStyleBackColor = false;
@@ -125,14 +125,14 @@
             this.StepListBox.ItemHeight = 15;
             this.StepListBox.Location = new System.Drawing.Point(4, 8);
             this.StepListBox.Name = "StepListBox";
-            this.StepListBox.Size = new System.Drawing.Size(122, 334);
+            this.StepListBox.Size = new System.Drawing.Size(142, 334);
             this.StepListBox.TabIndex = 8;
             this.StepListBox.SelectedIndexChanged += new System.EventHandler(this.StepListBox_SelectedIndexChanged);
             // 
             // MainPictureBox
             // 
             this.MainPictureBox.BackColor = System.Drawing.Color.Linen;
-            this.MainPictureBox.Location = new System.Drawing.Point(132, 8);
+            this.MainPictureBox.Location = new System.Drawing.Point(174, 8);
             this.MainPictureBox.Name = "MainPictureBox";
             this.MainPictureBox.Size = new System.Drawing.Size(853, 617);
             this.MainPictureBox.TabIndex = 9;
@@ -143,7 +143,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SandyBrown;
-            this.ClientSize = new System.Drawing.Size(997, 637);
+            this.ClientSize = new System.Drawing.Size(1035, 632);
             this.Controls.Add(this.MainPictureBox);
             this.Controls.Add(this.StepListBox);
             this.Controls.Add(this.alogorithmLabel);
@@ -152,7 +152,7 @@
             this.Controls.Add(this.CoreCountLabel);
             this.Controls.Add(this.DotCountTextBox);
             this.Controls.Add(this.DotCountLabel);
-            this.Controls.Add(this.AlogorithmComboBox);
+            this.Controls.Add(this.AlgorithmComboBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
             this.Text = "Распознование образов";
@@ -163,7 +163,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox AlogorithmComboBox;
+        private System.Windows.Forms.ComboBox AlgorithmComboBox;
         private System.Windows.Forms.Label alogorithmLabel;
         private System.Windows.Forms.Label DotCountLabel;
         private System.Windows.Forms.TextBox DotCountTextBox;
